@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Intelligent Registration System</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="card">
+      <h1>Register</h1>
+      <div id="top-messages"></div>
+      <form id="regForm" novalidate>
+        <div class="row">
+          <div class="col">
+            <label>First Name *</label>
+            <input id="firstName" name="firstName" required />
+            <small class="error" id="err-firstName"></small>
+          </div>
+          <div class="col">
+            <label>Last Name *</label>
+            <input id="lastName" name="lastName" required />
+            <small class="error" id="err-lastName"></small>
+          </div>
+        </div>
+
+        <label>Email *</label>
+        <input id="email" name="email" required />
+        <small class="error" id="err-email"></small>
+
+        <label>Phone Number *</label>
+        <input id="phone" name="phone" required placeholder="+91xxxxxxxxxx or +1xxxxxxxxxx" />
+        <small class="error" id="err-phone"></small>
+
+        <div class="row">
+          <div class="col">
+            <label>Age</label>
+            <input id="age" name="age" type="number" min="0" max="120" />
+          </div>
+          <div class="col gender-col">
+            <label>Gender *</label>
+            <div class="genders">
+              <label><input type="radio" name="gender" value="Male" /> Male</label>
+              <label><input type="radio" name="gender" value="Female" /> Female</label>
+              <label><input type="radio" name="gender" value="Other" /> Other</label>
+            </div>
+            <small class="error" id="err-gender"></small>
+          </div>
+        </div>
+
+        <label>Address</label>
+        <textarea id="address" name="address" rows="2"></textarea>
+
+        <div class="row">
+          <div class="col">
+            <label>Country</label>
+            <select id="country"></select>
+          </div>
+          <div class="col">
+            <label>State</label>
+            <select id="state"></select>
+          </div>
+          <div class="col">
+            <label>City</label>
+            <select id="city"></select>
+          </div>
+        </div>
+
+        <label>Password</label>
+        <input id="password" name="password" type="password" />
+        <meter max="4" id="password-strength-meter"></meter>
+        <small id="password-strength-text"></small>
+        <small class="error" id="err-password"></small>
+
+        <label>Confirm Password</label>
+        <input id="confirmPassword" name="confirmPassword" type="password" />
+        <small class="error" id="err-confirmPassword"></small>
+
+        <label class="terms"><input type="checkbox" id="terms" /> I accept the Terms &amp; Conditions *</label>
+        <small class="error" id="err-terms"></small>
+
+        <button id="submitBtn" type="submit" disabled>Submit</button>
+      </form>
+    </div>
+  </div>
+
+<script src="script.js"></script>
+</body>
+</html>
